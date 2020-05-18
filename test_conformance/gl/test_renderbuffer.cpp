@@ -52,7 +52,7 @@ gluCheckExtension(const GLubyte *extension, const GLubyte *extensions)
 #endif
 
 
-extern "C" { extern cl_uint gRandomSeed; };
+extern cl_uint gRandomSeed;
 
 // This is defined in the write common code:
 extern int test_cl_image_write( cl_context context, cl_command_queue queue,

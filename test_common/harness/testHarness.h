@@ -23,10 +23,6 @@
 
 #include <string>
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 #define ADD_TEST(fn) {test_##fn, #fn, Version(1, 0)}
 #define ADD_TEST_VERSION(fn, ver) {test_##fn, #fn, ver}
 #define NOT_IMPLEMENTED_TEST(fn) {NULL, #fn, Version(0, 0)}
@@ -142,9 +138,6 @@ extern int      gIsOpenCL_C_1_0_Device; // This is set to 1 if the device suppor
     void     memset_pattern4(void *, const void *, size_t);
 #endif
 
-#ifdef __cplusplus
-}
-#endif
 extern void PrintArch(void);
 
 

@@ -17,7 +17,7 @@
 
 #include "gl_headers.h"
 
-extern "C" { extern cl_uint gRandomSeed; };
+extern cl_uint gRandomSeed;
 
 static const char *imageReadKernelPattern =
 "__kernel void sample_test( read_only image3d_t source, sampler_t sampler, __global %s4 *results )\n"

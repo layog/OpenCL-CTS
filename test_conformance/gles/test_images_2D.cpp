@@ -17,7 +17,7 @@
 
 #include "gl_headers.h"
 
-extern "C" { extern cl_uint gRandomSeed; }
+extern cl_uint gRandomSeed;
 
 static const char *imageReadKernelPattern =
 "#pragma OPENCL EXTENSION cl_khr_fp16 : enable\n"  /* added support for half floats */

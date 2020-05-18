@@ -27,7 +27,7 @@
 
 using namespace std;
 
-extern "C" { extern cl_uint gRandomSeed; }
+extern cl_uint gRandomSeed;
 
 #pragma mark -
 #pragma mark _2D depth read tests

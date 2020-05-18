@@ -20,12 +20,6 @@
 #include <Windows.h>
 #endif
 
-#ifdef __cplusplus
-    #define EXTERN_C extern "C"
-#else
-    #define EXTERN_C
-#endif
-
 
 //
 // stdlib.h
@@ -35,7 +29,7 @@
 
 // llabs appeared in MS C v16 (VS 10/2010).
 #if defined( _MSC_VER ) && _MSC_VER <= 1500
-    EXTERN_C inline long long llabs(long long __x) { return __x >= 0 ? __x : -__x; }
+inline long long llabs(long long __x) { return __x >= 0 ? __x : -__x; }
 #endif
 
 
@@ -122,10 +116,6 @@ typedef long long           int64_t;
 #endif
 
 #if defined( _MSC_VER )
-
-    #ifdef __cplusplus
-        extern "C" {
-    #endif
 
     #ifndef NAN
         #define NAN  (INFINITY - INFINITY)
@@ -233,10 +223,6 @@ typedef long long           int64_t;
         long double nanl( const char* str);
     #endif
 
-    #ifdef __cplusplus
-        }
-    #endif
-
 #endif
 
 #if defined( __ANDROID__ )
@@ -273,8 +259,8 @@ typedef long long           int64_t;
 //
 
 #if defined( _MSC_VER )
-    EXTERN_C unsigned int sleep( unsigned int sec );
-    EXTERN_C int usleep( int usec );
+        unsigned int sleep(unsigned int sec);
+        int usleep(int usec);
 #endif
 
 
@@ -304,14 +290,14 @@ typedef long long           int64_t;
 
     #define MAXPATHLEN _MAX_PATH
 
-    EXTERN_C uint64_t ReadTime( void );
-    EXTERN_C double SubtractTime( uint64_t endTime, uint64_t startTime );
+        uint64_t ReadTime(void);
+        double SubtractTime(uint64_t endTime, uint64_t startTime);
 
-/** Returns the number of leading 0-bits in x,
-    starting at the most significant bit position.
-    If x is 0, the result is undefined.
-*/
-    EXTERN_C int __builtin_clz(unsigned int pattern);
+        /** Returns the number of leading 0-bits in x,
+            starting at the most significant bit position.
+            If x is 0, the result is undefined.
+        */
+        int __builtin_clz(unsigned int pattern);
 
 #endif
 

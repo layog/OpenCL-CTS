@@ -36,7 +36,7 @@ enum ShuffleMode
     kBuiltInDualInputFnMode
 };
 
-extern "C" { extern cl_uint gRandomSeed;};
+extern cl_uint gRandomSeed;
 
 static const char *shuffleKernelPattern[3] =  {
     "__kernel void sample_test( __global %s%s *source, __global %s%s *dest )\n"
